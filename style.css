@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Inter:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at top center, #ff003c20 0%, #040420 40%, #05051a 100%);
+    color: #f8f8ff;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* --- NAWIGACJA --- */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    background-color: #060620;
+    padding: 20px 0;
+    border-bottom: 1px solid #222;
+}
+
+.navbar a {
+    color: #cfcfcf;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+
+.navbar a:hover {
+    color: #ff4c70;
+}
+
+/* --- GŁÓWNY HEADER --- */
+.hero {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 60px;
+    padding: 80px;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,0,60,0.4), transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.logo {
+    border-radius: 20px;
+    padding: 80px 100px;
+    font-size: 3em;
+    font-family: 'Rubik Mono One', sans-serif;
+    color: white;
+    z-index: 1;
+}
+
+.about {
+    background-color: #060620;
+    border: 1px solid #ff4c70;
+    border-radius: 20px;
+    padding: 30px;
+    width: 1575px;
+    z-index: 1; 
+}
+
+.about h3 {
+    color: #ff6b8a;
+    margin-bottom: 10px;
+}
+
+/* --- DUŻA SEKCJA --- */
+.main-box {
+    background-color: #050528;
+    border: 1px solid #ff4c70;
+    border-radius: 20px;
+    margin: 80px auto;
+    width: 85%;
+    height: 600px;
+}
+
+/* --- STOPKA --- */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 60px;
+    background-color: #0a0a24;
+}
+
+.footer p {
+    color: #ccc;
+}
+
+.footer .icons {
+    display: flex;
+    gap: 30px;
+}
+
+.footer .icons img {
+    width: 32px;
+    height: 32px;
+    filter: drop-shadow(0 0 5px #ff4c70);
+    transition: 0.2s;
+}
+
+.footer .icons img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px #ff6b8a);
+}

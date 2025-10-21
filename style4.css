@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000 10%, #ffef00 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* --- NAWIGACJA --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0a0a0a;
+  padding: 15px 50px;
+  border-bottom: 2px solid #222;
+}
+
+.navbar .brand {
+  color: #d7b300;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.navbar .brand strong {
+  color: #ffef00;
+}
+
+.navbar .links a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: lowercase;
+  transition: 0.2s;
+}
+
+.navbar .links a:hover {
+  color: #ffef00;
+  text-shadow: 0 0 6px #ffef00;
+}
+
+/* --- GŁÓWNA CZĘŚĆ --- */
+.main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 80px;
+  padding: 80px;
+  flex-grow: 1;
+}
+
+/* --- FOTO --- */
+.photo img {
+  width: 280px;
+  height: auto;
+  border-radius: 20px;
+  border: 2px solid #ffef00;
+  box-shadow: 0 0 30px rgba(255, 239, 0, 0.3);
+}
+
+/* --- OPIS --- */
+.description {
+  background-color: rgba(0, 0, 20, 0.9);
+  border: 1px solid #ffff00;
+  border-radius: 15px;
+  padding: 25px 30px;
+  max-width: 400px;
+  position: relative;
+  margin-left: auto;
+}
+
+.description h2 {
+  color: #ffef00;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.description p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #fff9b0;
+}
+
+/* --- STOPKA --- */
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #0a0a0a;
+  padding: 30px 60px;
+}
+
+.footer .icons {
+  display: flex;
+  gap: 25px;
+}
+
+.footer img {
+  width: 35px;
+  height: 35px;
+  filter: brightness(0) invert(1);
+  transition: 0.25s;
+}
+
+.footer img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px #ffef00);
+}
