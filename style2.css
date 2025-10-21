@@ -22,8 +22,11 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #0a0a26;
-  padding: 15px 50px;
+  padding: 15px 40px;
   border-bottom: 1px solid #27275f;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 10;
 }
 
 .navbar .brand {
@@ -37,9 +40,15 @@ body {
   font-weight: 700;
 }
 
+/* --- LINKI --- */
+.navbar .links {
+  display: flex;
+  gap: 20px;
+  transition: all 0.3s ease;
+}
+
 .navbar .links a {
   color: white;
-  margin: 0 15px;
   text-decoration: none;
   font-weight: 700;
   transition: 0.2s;
@@ -50,13 +59,48 @@ body {
   text-shadow: 0 0 8px #7d6bff;
 }
 
-/* --- HEADER (LOGO + OPIS) --- */
+/* --- HAMBURGER --- */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 20;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #9999ff;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+/* --- ANIMACJA KLIKNIĘCIA --- */
+.menu-toggle.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* --- HEADER --- */
 .hero {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 100px;
-  padding: 100px;
+  justify-content: center;
+  gap: 80px;
+  padding: 80px 40px;
+  flex-wrap: wrap;
+  text-align: center;
   position: relative;
 }
 
@@ -64,7 +108,8 @@ body {
   content: "";
   position: absolute;
   top: 50px;
-  left: 40%;
+  left: 50%;
+  transform: translateX(-50%);
   width: 400px;
   height: 400px;
   background: radial-gradient(circle, rgba(0,0,255,0.4), transparent 70%);
@@ -76,8 +121,8 @@ body {
 .logo {
   background-color: #0a0a26;
   border-radius: 25px;
-  padding: 60px 80px;
-  font-size: 4em;
+  padding: 50px 60px;
+  font-size: 3.5em;
   font-family: 'Orbitron', sans-serif;
   text-align: center;
   color: #ff4cfb;
@@ -96,23 +141,19 @@ body {
   border: 1px solid #3a3aff;
   border-radius: 15px;
   padding: 25px 30px;
-  width: 80%;
-  height: 260px;
+  max-width: 600px;
   color: #9ab0ff;
   z-index: 1;
-}
-
-/* --- MAIN --- */
-.content {
-  flex-grow: 1;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* --- FOOTER --- */
 .footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  padding: 40px 60px;
+  padding: 30px 20px;
   background-color: #07071c;
 }
 
@@ -131,4 +172,74 @@ body {
 .footer img:hover {
   transform: scale(1.1);
   filter: drop-shadow(0 0 12px #a29bff) brightness(1.1);
+}
+
+/* --- RESPONSYWNOŚĆ --- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navbar .links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #0a0a26;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+  }
+
+  .navbar .links.active {
+    max-height: 300px;
+    opacity: 1;
+  }
+
+  .navbar .links a {
+    width: 100%;
+    padding: 12px 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 50px 20px;
+    gap: 40px;
+  }
+
+  .logo {
+    font-size: 2.5em;
+    padding: 30px 40px;
+  }
+
+  .info {
+    max-width: 90%;
+  }
+
+  .footer img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 2em;
+    padding: 25px 35px;
+  }
+
+  .info {
+    font-size: 0.9rem;
+    padding: 20px;
+  }
+
+  .footer img {
+    width: 28px;
+    height: 28px;
+  }
 }
