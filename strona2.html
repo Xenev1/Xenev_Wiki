@@ -4,14 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Xenev Wiki</title>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
   <link rel="stylesheet" href="style2.css">
-    <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
 <body>
   <!-- NAWIGACJA -->
   <nav class="navbar">
     <div class="brand">Witaj na <span>Xenev_Wiki</span></div>
-    <div class="links">
+
+    <div class="menu-toggle" id="menuToggle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <div class="links" id="navLinks">
       <a href="index.html">Główna Strona</a>
       <a href="strona2.html">Informacje o 28mlody</a>
       <a href="strona3.html">Informacje o MaxGamerUA</a>
@@ -21,7 +28,7 @@
 
   <!-- HEADER -->
   <header class="hero">
-    <div class="logo">28<br><span>mlody</span></div>
+    <div class="logo">28<br><span>młody</span></div>
     <div class="info">
       <p>
         O Najlepszym przyjacielu Autora Strony<br>
@@ -33,10 +40,8 @@
     </div>
   </header>
 
-  <!-- MAIN (opcjonalna zawartość) -->
   <main class="content"></main>
 
-  <!-- STOPKA -->
   <footer class="footer">
     <div class="icons">
       <a href="https://www.youtube.com/@28mlodyes"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube"></a>
@@ -44,6 +49,16 @@
       <a href="https://www.tiktok.com/@28mlody?lang=pl-PL"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" alt="TikTok"></a>
     </div>
   </footer>
+
+  <script>
+    // ANIMOWANE MENU
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
-
