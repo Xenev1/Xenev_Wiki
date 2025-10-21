@@ -1,48 +1,251 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Xenev Wiki – Strona 4</title>
-  <link rel="stylesheet" href="style4.css">
-  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <link rel="icon" type="image/x-icon" href="favicon.png" />
+  <link rel="stylesheet" href="style4.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #000 10%, #ffef00 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* --- NAWIGACJA --- */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #0a0a0a;
+      padding: 15px 50px;
+      border-bottom: 2px solid #222;
+      flex-wrap: wrap;
+    }
+
+    .navbar .brand {
+      color: #d7b300;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .navbar .brand strong {
+      color: #ffef00;
+    }
+
+    .navbar .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .navbar .links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: lowercase;
+      transition: 0.2s;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+
+    .navbar .links a:hover {
+      color: #ffef00;
+      text-shadow: 0 0 6px #ffef00;
+    }
+
+    .navbar .links a.active {
+      color: #ffef00;
+    }
+
+    /* --- GŁÓWNA CZĘŚĆ --- */
+    .main {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 80px;
+      padding: 80px;
+      flex-grow: 1;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .photo img {
+      width: 280px;
+      height: auto;
+      border-radius: 20px;
+      border: 2px solid #ffef00;
+      box-shadow: 0 0 30px rgba(255, 239, 0, 0.3);
+      max-width: 100%;
+    }
+
+    .description {
+      background-color: rgba(0, 0, 20, 0.9);
+      border: 1px solid #ffff00;
+      border-radius: 15px;
+      padding: 25px 30px;
+      max-width: 450px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .description h2 {
+      color: #ffef00;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .description p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #fff9b0;
+    }
+
+    /* --- STOPKA --- */
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0a0a0a;
+      padding: 25px 15px;
+    }
+
+    .footer .icons {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer img {
+      width: 35px;
+      height: 35px;
+      filter: brightness(0) invert(1);
+      transition: 0.25s;
+    }
+
+    .footer img:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px #ffef00);
+    }
+
+    /* --- RESPONSYWNOŚĆ --- */
+    @media (max-width: 1024px) {
+      .main {
+        padding: 60px 40px;
+        gap: 40px;
+      }
+      .navbar {
+        padding: 15px 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: center;
+      }
+
+      .navbar .links {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .main {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+      }
+
+      .description {
+        max-width: 90%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar {
+        padding: 10px 15px;
+      }
+
+      .navbar .brand {
+        font-size: 1rem;
+      }
+
+      .navbar .links a {
+        font-size: 0.9rem;
+        margin: 3px 0;
+      }
+
+      .photo img {
+        width: 200px;
+      }
+
+      .description {
+        font-size: 0.9rem;
+        padding: 20px;
+      }
+
+      .footer img {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="brand">
-      <span>Witaj na</span> <strong>Xenev_Wiki</strong>
+      Witaj na <strong>Xenev_Wiki</strong>
     </div>
     <div class="links">
       <a href="index.html">Główna Strona</a>
       <a href="strona2.html">Informacje o 28mlody</a>
-      <a href="strona3.html" class="active">Informacje o MaxGamerUA</a>
-      <a href="strona4.html">Kontakt</a>
+      <a href="strona3.html">Informacje o MaxGamerUA</a>
+      <a href="strona4.html" class="active">Kontakt</a>
     </div>
   </nav>
 
-  <!-- GŁÓWNA SEKCJA -->
   <main class="main">
     <div class="photo">
-      <img src="logo.png" alt="Zdjęcie osoby">
+      <img src="logo.png" alt="Logo strony Xenev Wiki" />
     </div>
 
     <div class="description">
-      <h2>Opis podstrony</h2>
+      <h2>Skontaktuj się ze mną</h2>
       <p>
-    Na Tej pod stronie możesz się skontaktować z twórcą strony ale nie gwarantuje że odpisze
-    xenevkontakt@gmail.com <br>
-    Tam morzesz się skontaktować ze mną 
+        Na tej podstronie możesz skontaktować się z twórcą strony.  
+        Nie gwarantuję odpowiedzi, ale możesz napisać na:
       </p>
+      <p><strong>E-mail:</strong> <a href="mailto:xenevkontakt@gmail.com">xenevkontakt@gmail.com</a></p>
     </div>
   </main>
 
-  <!-- STOPKA -->
   <footer class="footer">
     <div class="icons">
-      <a href="https://www.youtube.com/@Xenev_1"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube"></a>
-      <a href="https://www.tiktok.com/@28robloxson"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" alt="TikTok"></a>
-      <a href="https://discord.gg/Q5qYfp5H"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg" alt="Discord"></a>
+      <a href="https://www.youtube.com/@Xenev_1"
+        ><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube"
+      /></a>
+      <a href="https://www.tiktok.com/@28robloxson"
+        ><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" alt="TikTok"
+      /></a>
+      <a href="https://discord.gg/Q5qYfp5H"
+        ><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg" alt="Discord"
+      /></a>
     </div>
   </footer>
 </body>
