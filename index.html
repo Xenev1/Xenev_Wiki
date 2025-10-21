@@ -4,32 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xenev Wiki - Strona 1</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.png">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html">Główna Strona</a>
-        <a href="strona2.html">Informacje o 28mlody</a>
-        <a href="strona3.html">Informacje o MaxGamerUA</a>
-        <a href="strona4.html">Kontakt</a>
+        <div class="logo-text">Xenev_Wiki</div>
+        <div class="nav-container">
+            <a href="index.html">Główna Strona</a>
+            <a href="strona2.html">Informacje o 28mlody</a>
+            <a href="strona3.html">Informacje o MaxGamerUA</a>
+            <a href="strona4.html">Kontakt</a>
+        </div>
+        <button class="nav-toggle" aria-label="Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
     </nav>
 
     <header class="hero">
-        <div class="logo"><img src="logo.png"></div>
         <div class="about">
-            <h3>O autorze strony</h3>
-            <p>Nazywa się Daniel i ma nazwisko Rzepecki</p>
-            <p>Jego najlepszym przyjacielem jest 28mlody</p>
-            <br>
-            <p>Urodził się w Policach<br>19.12.2010 r.<br>Nagrywa na TikTok</p>
+            <div class="about-text">
+                <h3>O autorze strony</h3>
+                <p>Nazywa się Daniel i ma nazwisko Rzepecki</p>
+                <p>Jego najlepszym przyjacielem jest 28mlody</p>
+                <p>Urodził się w Policach<br>19.12.2010 r.<br>Nagrywa na TikTok</p>
+            </div>
+            <div class="about-logo">
+                <img src="logo.png" alt="Logo autora">
+            </div>
         </div>
     </header>
 
     <main>
         <section class="main-box">
-            <!-- Możesz tu wrzucić tekst, opis, albo inne sekcje -->
+            <!-- Tu możesz dodać treść -->
         </section>
     </main>
 
@@ -41,7 +51,17 @@
             <a href="https://discord.gg/Q5qYfp5H"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg" alt="Discord"></a>
         </div>
     </footer>
+
+    <script>
+        const toggleButton = document.querySelector('.nav-toggle');
+        const navContainer = document.querySelector('.nav-container');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            toggleButton.classList.toggle('active');
+            navContainer.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        });
+    </script>
 </body>
-
 </html>
-
