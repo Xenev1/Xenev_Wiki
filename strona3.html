@@ -1,18 +1,196 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Xenev Wiki – Strona 4</title>
-  <link rel="stylesheet" href="style3.css">
-    <link rel="icon" type="image/x-icon" href="favicon.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Xenev Wiki – Strona 4 (Responsywne)</title>
+  <link rel="icon" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* -------- Reset -------- */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+
+    /* -------- Body & tło -------- */
+    body{
+      font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      color:#fff;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      background: linear-gradient(135deg,#000 10%, #ffef00 100%);
+    }
+
+    /* -------- NAVBAR z hamburgerem (CSS-only) -------- */
+    .navbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      background:#0a0a0a;
+      padding:12px 20px;
+      border-bottom:2px solid #222;
+      gap:12px;
+    }
+
+    .brand{color:#d7b300;font-weight:700;font-size:1.15rem}
+    .brand strong{color:#ffef00}
+
+    /* checkbox hack */
+    .nav-toggle{
+      display:none;
+    }
+
+    .hamburger{
+      display:none;
+      width:34px;
+      height:28px;
+      position:relative;
+      cursor:pointer;
+    }
+    .hamburger span{
+      position:absolute;
+      left:0;
+      right:0;
+      height:3px;
+      background:#fff;
+      border-radius:3px;
+      transition:transform .25s ease, top .25s ease, opacity .25s ease;
+    }
+    .hamburger span:nth-child(1){top:6px}
+    .hamburger span:nth-child(2){top:13px}
+    .hamburger span:nth-child(3){top:20px}
+
+    /* NAV LINKS */
+    .links{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .links a{
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      text-transform:lowercase;
+      padding:6px 8px;
+      border-radius:6px;
+      transition:color .18s, background .18s;
+    }
+    .links a.active,
+    .links a:hover{ color:#ffef00; text-shadow:0 0 6px #ffef00 }
+
+    /* -------- Main layout -------- */
+    .main{
+      display:flex;
+      gap:48px;
+      padding:48px;
+      align-items:flex-start;
+      justify-content:center;
+      flex-wrap:wrap;
+      flex-grow:1;
+    }
+
+    .photo img{
+      width:280px;
+      max-width:100%;
+      height:auto;
+      border-radius:20px;
+      border:2px solid #ffef00;
+      box-shadow:0 0 30px rgba(255,239,0,0.3);
+      display:block;
+    }
+
+    .description{
+      background:rgba(0,0,20,0.9);
+      border:1px solid #ffef00;
+      border-radius:15px;
+      padding:24px;
+      max-width:500px;
+      width:100%;
+    }
+    .description h2{ color:#ffef00; text-align:center; margin-bottom:12px }
+    .description p{ color:#fff9b0; line-height:1.6 }
+
+    /* -------- Footer -------- */
+    .footer{
+      background:#0a0a0a;
+      padding:18px 24px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .icons{ display:flex; gap:18px }
+    .icons img{ width:34px; height:34px; filter:brightness(0) invert(1); transition:transform .2s, filter .2s }
+    .icons img:hover{ transform:scale(1.08); filter:drop-shadow(0 0 10px #ffef00) }
+
+    /* -------- RESPONSYWNOŚĆ -------- */
+
+    /* tablet */
+    @media (max-width:992px){
+      .main{padding:36px; gap:28px}
+      .navbar{padding:12px 18px}
+    }
+
+    /* mobile */
+    @media (max-width:700px){
+      /* pokaż hamburger i ukryj normalne links */
+      .hamburger{display:inline-block}
+      .links{
+        position: absolute;
+        top:64px;
+        left:0;
+        right:0;
+        background:#0a0a0a;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:12px 16px;
+        gap:8px;
+        border-bottom:2px solid #222;
+        transform-origin:top;
+        transform:scaleY(0);
+        transition:transform .18s ease;
+        z-index:30;
+      }
+
+      /* checkbox checked -> pokaż menu */
+      .nav-toggle:checked + .hamburger + .links{
+        transform:scaleY(1);
+      }
+
+      /* animacja hamburger -> X */
+      .nav-toggle:checked + .hamburger span:nth-child(1){ transform:translateY(7px) rotate(45deg) }
+      .nav-toggle:checked + .hamburger span:nth-child(2){ opacity:0 }
+      .nav-toggle:checked + .hamburger span:nth-child(3){ transform:translateY(-7px) rotate(-45deg) }
+
+      .navbar{position:relative}
+      .main{padding:28px 16px; gap:20px}
+      .photo img{max-width:260px}
+      .description{padding:18px}
+      .footer{padding:16px}
+      .icons img{width:28px;height:28px}
+    }
+
+    /* very small phones */
+    @media (max-width:360px){
+      .photo img{max-width:220px}
+      .description{padding:14px}
+      .brand{font-size:1rem}
+    }
+  </style>
 </head>
 <body>
-  <!-- NAVBAR -->
+
   <nav class="navbar">
-    <div class="brand">
-      <span>Witaj na</span> <strong>Xenev_Wiki</strong>
-    </div>
+    <div class="brand"><span>witaj na</span> <strong>Xenev_Wiki</strong></div>
+
+    <!-- checkbox + hamburger + links (CSS only) -->
+    <input id="nav-toggle" class="nav-toggle" type="checkbox" />
+    <label for="nav-toggle" class="hamburger" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
+
     <div class="links">
       <a href="index.html">Główna Strona</a>
       <a href="strona2.html">Informacje o 28mlody</a>
@@ -21,30 +199,29 @@
     </div>
   </nav>
 
-  <!-- GŁÓWNA SEKCJA -->
   <main class="main">
     <div class="photo">
-      <img src="unnamed.jpg" alt="Zdjęcie osoby">
+      <!-- jeśli nie masz obrazka, użyj placeholdera: https://via.placeholder.com/280 -->
+      <img src="unnamed.jpg" alt="Zdjęcie osoby" onerror="this.src='https://via.placeholder.com/280x280.png?text=Brak+obrazu'">
     </div>
 
     <div class="description">
       <h2>Opis</h2>
       <p>
-        Ta podstrona jest o drugim najlepszym przyjacielu twórcy, z którym spędził sporo fajnych chwil na ulubionej konsoli twórcy. <br><br>
-
+        Ta podstrona jest o drugim najlepszym przyjacielu twórcy, z którym spędził sporo fajnych chwil na ulubionej konsoli twórcy.
+        <br><br>
         Nick osoby, o której mówimy, to <b>MaxGamerUA</b>.<br>
-        Z zawodu jest informatykiem.<br><br>
-
+        Z zawodu jest informatykiem.
+        <br><br>
         Temat filozoficzny o osobie, o której mówimy:<br>
-        „Obmyśla najczęściej temat tego, na ile świat jest niesprawiedliwy przez ludzi.”<br><br>
-
+        „Obmyśla najczęściej temat tego, na ile świat jest niesprawiedliwy przez ludzi.”
+        <br><br>
         <b>Jakich gier nie lubi:</b><br>
         Fortnite i PUBG
       </p>
     </div>
   </main>
 
-  <!-- STOPKA -->
   <footer class="footer">
     <div class="icons">
       <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube"></a>
@@ -52,5 +229,6 @@
       <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg" alt="Discord"></a>
     </div>
   </footer>
+
 </body>
 </html>
