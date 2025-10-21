@@ -6,6 +6,7 @@
   box-sizing: border-box;
 }
 
+/* --- OGÓLNE --- */
 body {
   font-family: 'Inter', sans-serif;
   color: #fff;
@@ -24,6 +25,7 @@ body {
   background-color: #0a0a0a;
   padding: 15px 50px;
   border-bottom: 2px solid #222;
+  flex-wrap: wrap;
 }
 
 .navbar .brand {
@@ -36,16 +38,23 @@ body {
   color: #ffef00;
 }
 
+.navbar .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .navbar .links a {
   color: #fff;
-  margin: 0 15px;
+  margin: 0 10px;
   text-decoration: none;
   font-weight: 700;
   text-transform: lowercase;
   transition: 0.2s;
 }
 
-.navbar .links a:hover {
+.navbar .links a:hover,
+.navbar .links a.active {
   color: #ffef00;
   text-shadow: 0 0 6px #ffef00;
 }
@@ -53,10 +62,11 @@ body {
 /* --- GŁÓWNA CZĘŚĆ --- */
 .main {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
-  gap: 80px;
-  padding: 80px;
+  gap: 60px;
+  padding: 60px;
+  flex-wrap: wrap;
   flex-grow: 1;
 }
 
@@ -67,6 +77,7 @@ body {
   border-radius: 20px;
   border: 2px solid #ffef00;
   box-shadow: 0 0 30px rgba(255, 239, 0, 0.3);
+  max-width: 100%;
 }
 
 /* --- OPIS --- */
@@ -75,7 +86,8 @@ body {
   border: 1px solid #ffef00;
   border-radius: 15px;
   padding: 25px 30px;
-  max-width: 400px;
+  max-width: 500px;
+  width: 100%;
 }
 
 .description h2 {
@@ -86,17 +98,17 @@ body {
 
 .description p {
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.6;
   color: #fff9b0;
 }
 
 /* --- STOPKA --- */
 .footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   background-color: #0a0a0a;
-  padding: 30px 60px;
+  padding: 20px 30px;
 }
 
 .footer .icons {
@@ -114,4 +126,69 @@ body {
 .footer img:hover {
   transform: scale(1.1);
   filter: drop-shadow(0 0 10px #ffef00);
+}
+
+/* --- RESPONSYWNOŚĆ --- */
+
+/* TABLETY */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+
+  .main {
+    padding: 40px;
+    gap: 40px;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+}
+
+/* TELEFONY */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .navbar .links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar .links a {
+    margin: 5px 0;
+  }
+
+  .main {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+  }
+
+  .photo img {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .description {
+    padding: 20px;
+  }
+
+  .footer {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .footer .icons {
+    gap: 15px;
+  }
+
+  .footer img {
+    width: 28px;
+    height: 28px;
+  }
 }
