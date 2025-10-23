@@ -36,7 +36,17 @@
             </div>
         </div>
     </header>
-
+<div id="intro">Witaj na Xenev Wiki</div>
+    <script>
+    // Po 2 sekundach intro znika, a strona się pokazuje
+      setTimeout(() => {
+        document.getElementById('intro').style.opacity = '0';
+        setTimeout(() => {
+          document.getElementById('intro').style.display = 'none';
+          document.getElementById('main-content').style.display = 'block';
+        }, 1000); // Czekamy na zakończenie animacji
+      }, 2000); // Czas trwania intro
+        </script>
     <main>
         <section class="main-box">
             <!-- Tu możesz dodać treść -->
@@ -44,7 +54,7 @@
     </main>
 
     <footer class="footer">
-        <p>Wersja strony 1.0</p>
+        <p>Wersja strony 1.1</p>
         <div class="icons">
             <a href="https://www.youtube.com/@Xenev_1"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube"></a>
             <a href="https://www.tiktok.com/@28robloxson"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" alt="TikTok"></a>
@@ -65,3 +75,4 @@
     </script>
 </body>
 </html>
+
